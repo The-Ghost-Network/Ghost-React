@@ -1,0 +1,15 @@
+---
+import Layout from '../layouts/Layout.astro'
+import Nav from '../components/nav.jsx'
+import Tool from '../components/tool.astro';
+import "../styles/tool.css";
+---
+
+<Layout title="Ghost">
+    <Nav/>
+    <p class="tool-title">Tools</p>
+    <div class="tools">
+        <Tool name="FilterChecker" img="/assets/img/linkchecker.png" redir="window.location.href = '/check/'" desc="Check Your Links On Different Filters!"/>
+        <Tool name="Song Downloader" img="/assets/img/songdownloader.png" redir="window.location.href = '/dl/'" desc="Download Your Favorite Songs!"/>
+    </div>
+</Layout>

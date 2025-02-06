@@ -1,0 +1,29 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Game from '../components/game.astro';
+import Nav from '../components/nav.jsx';
+import data from "../json/games.json";
+import ddata from "..//json/deg.json"; 
+---
+
+<main style="z-index: 100;">
+    <Layout title="Ghost">
+        <Nav />
+        <center>
+            <br />
+            <p class="ex2" style="animation: fadeIn 1s;">Gα<x>me</x>s</p>
+            <p>
+                You can request ga<x>me</x>s on the <a
+                    href="https://discord.gg/dbyDXfs5dN"
+                    >Dіs<x>co</x>rd serv<x>er</x></a
+                >
+            </p>
+            <center>
+                <div class="gcontainer">
+                    {data.map((data: { name: string; href: string; img: string; }) => <Game name={data.name} href={data.href} img={data.img} />)}
+                {ddata.map((ddata: { name: string; href: string; img: string; }) => <Game name={ddata.name} href={"window.location.href = '" + ddata.href + "'"} img={ddata.img} />)}
+            </div>
+        </center>
+        </center>
+    </Layout>
+</main>
